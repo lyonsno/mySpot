@@ -5,11 +5,10 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 use App\
 
-class Spot extends Model
+class Flag extends Model
 {
-    public funtion phone()
+    public funtion user_id()
     {
         return $this->hasOne('App\Tag');
     }
-    
 }
