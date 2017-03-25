@@ -13,7 +13,7 @@ class CreateSpotsListsTable extends Migration
      */
     public function up()
     {
-        Schema::create('tags', function (Blueprint $table) {
+        Schema::create('spots_lists', function (Blueprint $table) {
             $table->increments('id');
             $table->timestamps();
             $table->integer('spot_id');
@@ -31,6 +31,6 @@ class CreateSpotsListsTable extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('spots_lists');
     }
 }

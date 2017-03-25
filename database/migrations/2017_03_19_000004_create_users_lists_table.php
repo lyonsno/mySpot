@@ -13,12 +13,14 @@ class CreateUsersListsTable extends Migration
      */
     public function up()
     {
-        Schema::create('lists', function (Blueprint $table) {
+        Schema::create('users_lists', function (Blueprint $table) {
             $table->increments('id');
             $table->timestamps();
-            $table->integer('owner_id');
-
-            $table->foreign('owner_id')->references('id')->on('user');
+            $table->integer('user_id');
+            $table->integer('list_id');
+            
+            $table->foreign('user_id')->references('id')->on('users');
+            $table->foreign('list_id')->references('id')->on('lists');
         });
     }
 
@@ -29,6 +31,6 @@ class CreateUsersListsTable extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('users_lists');        
     }
 }
