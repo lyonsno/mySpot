@@ -5,10 +5,10 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 use App\
 
-class Flag extends Model
+class Tag extends Model
 {
-    public funtion user_id()
+    public function spots()
     {
-        return $this->hasOne('App\Tag');
+        return $this->belongsToMany('App\Spots');
     }
 }

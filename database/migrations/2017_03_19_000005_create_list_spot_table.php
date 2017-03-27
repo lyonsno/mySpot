@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateSpotsListsTable extends Migration
+class CreateListSpotTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,11 @@ class CreateSpotsListsTable extends Migration
      */
     public function up()
     {
-        Schema::create('spots_lists', function (Blueprint $table) {
+        Schema::create('list_spot', function (Blueprint $table) {
             $table->increments('id');
             $table->timestamps();
-            $table->integer('spot_id');
-            $table->integer('list_id');
+            $table->integer('spot_id')->unsigned();
+            $table->integer('list_id')->unsigned();
 
             $table->foreign('spot_id')->references('id')->on('spots');
             $table->foreign('list_id')->references('id')->on('lists');
@@ -31,6 +31,6 @@ class CreateSpotsListsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('spots_lists');
+        Schema::dropIfExists('list_spot');
     }
 }

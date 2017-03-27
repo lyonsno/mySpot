@@ -26,4 +26,11 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    public function lists()
+    {
+        return $this->belongsToMany('App\Lists');
+    }
+
+    public function 
 }

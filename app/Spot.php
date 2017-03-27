@@ -7,9 +7,13 @@ use App\
 
 class Spot extends Model
 {
-    public funtion phone()
+    public function tags()
     {
-        return $this->hasOne('App\Tag');
+    	return $this->belongsToMany('App\Tags');
     }
-    
+
+    public function lists()
+    {
+    	return $this->belongsToMany('App\Lists');
+    }
 }
