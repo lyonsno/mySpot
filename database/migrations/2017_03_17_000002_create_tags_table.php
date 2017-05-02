@@ -17,9 +17,11 @@ class CreateTagsTable extends Migration
             $table->increments('id');
             $table->timestamps();
             $table->integer('spot_id')->unsigned()->index();
+            $table->integer('user_id')->unsigned();
             $table->string('text');
 
             $table->foreign('spot_id')->references('id')->on('spots');
+            $table->foreign('user_id')->references('id')->on('users');
         });
     }
 

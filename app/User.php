@@ -32,5 +32,4 @@ class User extends Authenticatable
         return $this->belongsToMany('App\Lists');
     }
 
-    public function 
 }

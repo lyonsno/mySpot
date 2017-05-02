@@ -23,6 +23,11 @@
         }
     },
     "autoload-dev": {
+        "classmap": [
+            "database/seeds/MySpotSeeder.php",
+            "app/Spot.php",
+            "app/User.php"
+        ],
         "psr-4": {
             "Tests\\": "tests/"
         }

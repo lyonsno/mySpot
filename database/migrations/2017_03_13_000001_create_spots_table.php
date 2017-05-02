@@ -17,10 +17,10 @@ class CreateSpotsTable extends Migration
             $table->increments('id');
             $table->timestamps();
             $table->string('name');
-            $table->decimal('longitude', 10, 7);
-            $table->decimal('latitude', 10, 7);
-            $table->text('address');
-            $table->text('notes');
+            $table->decimal('longitude', 10, 7)->nullable();
+            $table->decimal('latitude', 10, 7)->nullable();;
+            $table->text('address')->nullable();
+            $table->text('notes')->nullable();
         });
     }
 
