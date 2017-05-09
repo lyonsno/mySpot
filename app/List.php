@@ -8,11 +8,16 @@ class List extends Model
 {
 	public function owner()
 	{
-		return $this->hasOne('App\Users');
+		return $this->belongsTo('App\User');
 	}
 
 	public function spots()
 	{
-		return $this->belongsToMany('App\Spots');
+		return $this->belongsToMany('App\Spot');
+	}
+
+	public function users()
+	{
+		return $this->belongsToMany('App\User')->withPivot('privileges');
 	}
 }

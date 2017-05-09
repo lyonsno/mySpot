@@ -29,7 +29,14 @@ class User extends Authenticatable
 
     public function lists()
     {
-        return $this->belongsToMany('App\Lists');
+        return $this->belongsToMany('App\Lists')->withPivot('privileges');
     }
+
+    public function createdLists()
+    {
+        return $this->hasMany('App\Lists');
+    }
+
+
 
 }

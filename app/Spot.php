@@ -2,17 +2,17 @@
 
 namespace App;
 
-use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Model;	
 
 class Spot extends Model
 {
     public function tags()
     {
-    	return $this->belongsToMany('App\Tags');
+    	return $this->hasMany('App\Tag');
     }
 
     public function lists()
     {
-    	return $this->belongsToMany('App\Lists');
+    	return $this->belongsToMany('App\List');
     }
 }

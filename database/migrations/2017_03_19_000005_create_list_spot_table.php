@@ -19,8 +19,8 @@ class CreateListSpotTable extends Migration
             $table->integer('spot_id')->unsigned();
             $table->integer('list_id')->unsigned();
 
-            $table->foreign('spot_id')->references('id')->on('spots');
-            $table->foreign('list_id')->references('id')->on('lists');
+            $table->foreign('spot_id')->references('id')->on('spots')->onDelete('cascade');
+            $table->foreign('list_id')->references('id')->on('lists')->onDelete('cascade');
         });
     }
 
