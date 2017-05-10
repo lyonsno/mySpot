@@ -11,15 +11,22 @@ class MySpotSeeder extends Seeder {
 
 		// clear database
 		DB::table('spots')->delete();
-		DB::table('lists')->delete();
+		DB::table('compilations')->delete();
 		DB::table('users')->delete();
 		DB::table('tags')->delete();
 
-		DB::table('list_user')->delete();
-		DB::table('list_spot')->delete();
+		DB::table('compilation_user')->delete();
+		DB::table('compilation_spot')->delete();
 
-		$users = factory(App\User::class, 3)->create();
-		$spots = factory(App\Spot::class, 8)->create();
+		(new Faker\Generator)->seed(123);
+
+		factory(App\User::class, 3)->create();
+		factory(App\Spot::class, 8)->create();
+		// factory(App\List::class, 1)->create()->each(function ($list)
+		// 	{
+		// 		$list->spots()->save(factory(App\Spot::class)->make());
+		// 	});
+		
 		// seed spots table
 
 		// $spotPuccini = App\Spot::create(array(

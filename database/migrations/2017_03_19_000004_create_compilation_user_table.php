@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateListUserTable extends Migration
+class CreateCompilationUserTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,14 @@ class CreateListUserTable extends Migration
      */
     public function up()
     {
-        Schema::create('list_user', function (Blueprint $table) {
+        Schema::create('compilation_user', function (Blueprint $table) {
             $table->increments('id');
             $table->timestamps();
             $table->integer('user_id')->unsigned();
-            $table->integer('list_id')->unsigned();
+            $table->integer('compilation_id')->unsigned();
             
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
-            $table->foreign('list_id')->references('id')->on('lists')->onDelete('cascade');
+            $table->foreign('compilation_id')->references('id')->on('compilations')->onDelete('cascade');
         });
     }
 
@@ -31,6 +31,6 @@ class CreateListUserTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('list_user');        
+        Schema::dropIfExists('compilation_user');        
     }
 }

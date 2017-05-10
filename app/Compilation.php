@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class List extends Model
+class Compilation extends Model
 {
 	public function owner()
 	{
