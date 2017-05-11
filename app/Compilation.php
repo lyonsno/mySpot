@@ -16,7 +16,7 @@ class Compilation extends Model
 		return $this->belongsToMany('App\Spot');
 	}
 
-	public function users()
+	public function followers()
 	{
 		return $this->belongsToMany('App\User')->withPivot('privileges');
 	}

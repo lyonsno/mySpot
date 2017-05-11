@@ -37,6 +37,11 @@ class User extends Authenticatable
         return $this->hasMany('App\Compilation');
     }
 
+    public function createdSpots()
+    {
+        return $this->hasMany('App\Spot');
+    }
+
 
 
 }

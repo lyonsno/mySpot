@@ -15,4 +15,9 @@ class Spot extends Model
     {
     	return $this->belongsToMany('App\List');
     }
+
+    public function creator()
+    {
+    	return $this->belongsTo('App\User');
+    }
 }

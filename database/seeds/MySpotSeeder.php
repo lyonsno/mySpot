@@ -20,11 +20,18 @@ class MySpotSeeder extends Seeder {
 
 		(new Faker\Generator)->seed(123);
 
-		factory(App\User::class, 3)->create();
-		factory(App\Spot::class, 8)->create();
-		// factory(App\List::class, 1)->create()->each(function ($list)
+		factory(App\User::class, 3)->create()->each(function ($user)
+			{
+				$user->createdSpots()->save(factory(App\Spot::class)->make());
+			});
+
+		// factory(App\Spot::class, 8)->create();
+		factory(App\Compilation::class, 1)->create();
+
+
+		// ->each(function ($compilation)
 		// 	{
-		// 		$list->spots()->save(factory(App\Spot::class)->make());
+		// 		$compilation->spots()->save(factory(App\Spot::class)->make());
 		// 	});
 		
 		// seed spots table

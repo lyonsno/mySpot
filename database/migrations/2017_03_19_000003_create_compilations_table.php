@@ -16,9 +16,10 @@ class CreateCompilationsTable extends Migration
         Schema::create('compilations', function (Blueprint $table) {
             $table->increments('id');
             $table->timestamps();
-            $table->integer('owner_id')->unsigned();
+            $table->text('name');
+            $table->integer('user_id')->unsigned()->nullable();
 
-            $table->foreign('owner_id')->references('id')->on('users');
+            $table->foreign('user_id')->references('id')->on('users');
         });
     }
 

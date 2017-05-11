@@ -8,5 +8,6 @@ $factory->define(App\Spot::class, function (Faker\Generator $faker)
 		'latitude' => $faker->latitude(),
 		'longitude' => $faker->longitude(),
 		'notes' => $faker->sentence(5)
+		
 	];
 });
