@@ -10,4 +10,4 @@ $factory->define(App\Spot::class, function (Faker\Generator $faker)
 		'notes' => $faker->sentence(5)
 		
 	];
-});
+});	

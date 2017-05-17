@@ -51,35 +51,5 @@ class MySpotSeeder extends Seeder {
 			$compilation->tags()->saveMany(App\Tag::all()->random( $faker->numberBetween(0, App\Tag::count())));
 		});
 
-		// $spotPuccini = App\Spot::create(array(
-		// 	'name'		=> 'Puccini',
-		// 	'address'	=> 'Dogpatch',
-		// 	'notes'		=> 'One day we gotta go here'
-		// ));
-
-		// $spotChezMaman = App\Spot::create(array(
-		// 	'name'		=> 'Chez Maman',
-		// 	'address'	=> 'Potrero',
-		// 	'notes'		=> 'SALAD'
-		// ));
-		
-		// $this->command->info('gotsa some spotsa');
-
-		// seed users table
-
-		// $userNoah = App\User::create(array(
-		// 	'name'		=> 'Noah',
-		// 	'password'	=> 'gogogo'
-		// ));
-
-		// $userCristina = App\User::create(array(
-		// 	'name'		=> 'Cristina',
-		// 	'password'	=> 'fiftyshades'
-		// ));
-		
-		// $this->command->info('made users');
-
-		// seed tags table
-
 	}
 }
