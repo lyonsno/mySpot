@@ -3,7 +3,7 @@
 $factory->define(App\Spot::class, function (Faker\Generator $faker)
 {
 	return [
-		'name' => $faker->name(),
+		'name' => $faker->domainWord,
 		'address' => $faker->address(),
 		'latitude' => $faker->latitude(),
 		'longitude' => $faker->longitude(),

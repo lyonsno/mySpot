@@ -27,19 +27,24 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
-    public function lists()
+    public function createdCompilations()
     {
-        return $this->belongsToMany('App\Compilation')->withPivot('privileges');
-    }
-
-    public function createdLists()
-    {
-        return $this->hasMany('App\Compilation');
+        return $this->hasMany('App\Compilation', 'user_id', 'user_id');
     }
 
     public function createdSpots()
     {
         return $this->hasMany('App\Spot');
+    }
+
+    public function watchedCompilations()
+    {
+        return $this->belongsToMany('App\Spot')->withPivot('compilation_user')->withTimestamps();
+    }
+
+    public function tags()
+    {
+        return $this->hasMany('App\Tag');
     }
 
 

@@ -8,16 +8,17 @@ class Spot extends Model
 {
     public function tags()
     {
-    	return $this->hasMany('App\Tag');
+    	return $this->belongsToMany('App\Tag')->withTimestamps();
     }
 
-    public function lists()
+    public function compilations()
     {
-    	return $this->belongsToMany('App\List');
+    	return $this->belongsToMany('App\Compilation')->withTimestamps();
     }
 
     public function creator()
     {
-    	return $this->belongsTo('App\User');
+    	return $this->belongsTo('App\User', 'user_id', 'user_id');
     }
+
 }

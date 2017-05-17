@@ -18,7 +18,7 @@ class CreateSpotsTable extends Migration
             $table->timestamps();
             $table->text('name');
             $table->decimal('longitude', 10, 7)->nullable();
-            $table->decimal('latitude', 10, 7)->nullable();;
+            $table->decimal('latitude', 10, 7)->nullable();
             $table->text('address')->nullable();
             $table->text('notes')->nullable();
             $table->integer('user_id')->unsigned();
