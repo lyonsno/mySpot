@@ -8,7 +8,7 @@ class Tag extends Model
 {
     public function compilations()
     {
-        return $this->belongsToMany('App\Compilation')->withTimestamps();
+        return $this->belongsToMany('App\Compilation')->withPivot('compilation_tag')->withTimestamps();
     }
 
     public function creator()

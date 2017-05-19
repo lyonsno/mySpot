@@ -16,12 +16,10 @@ class CreateTagsTable extends Migration
         Schema::create('tags', function (Blueprint $table) {
             $table->increments('id');
             $table->timestamps();
-            $table->integer('compilation_id')->unsigned()->index()->nullable();
             $table->integer('user_id')->unsigned()->index()->nullable();
+            $table->foreign('user_id')->references('id')->on('users');
             $table->string('text');
 
-            $table->foreign('user_id')->references('id')->on('users');
-            $table->foreign('compilation_id')->references('id')->on('compilations');
         });
     }
 

@@ -29,7 +29,7 @@ class MySpotSeeder extends Seeder {
 				$user->createdSpots()->saveMany(factory(App\Spot::class, $faker->numberBetween(0, 3))->make());
 
 				// generate a few tags (assigned to spots later)
-				$user->tags()->saveMany(factory(App\Tag::class, $faker->numberBetween(0, 2))->make());
+				$user->tags()->saveMany(factory(App\Tag::class, $faker->numberBetween(0, 4))->make());
 			});
 
 		// create compilations 
@@ -45,10 +45,11 @@ class MySpotSeeder extends Seeder {
 
 			// add random followers to each one
 			$compilation->followers()->save($owner);
-			$compilation->followers()->saveMany(App\User::all()->where('id', '!=', $owner->id)->random($faker->numberBetween(1, App\User::count())));
+			$maxFollowers = (App\User::count() - 1);
+			$compilation->followers()->saveMany(App\User::all()->where('id', '!=', $owner->id)->random($faker->numberBetween(1, $maxFollowers)));
 
 			//add random tags to each one
-			$compilation->tags()->saveMany(App\Tag::all()->random( $faker->numberBetween(0, App\Tag::count())));
+			$compilation->tags()->saveMany(App\Tag::all()->random( $faker->numberBetween(1, App\Tag::count())));
 		});
 
 	}
