@@ -22,6 +22,8 @@ class MySpotSeeder extends Seeder {
 		(new Faker\Generator)->seed(123);
 		$faker = Faker\Factory::create();
 
+		// App\User::create(['name' => 'stan', 'email' => 'noah@test.com', 'password' => 'gogogo']);
+
 		// create users
 		factory(App\User::class, 3)->create()->each( function ($user) use ($faker)
 			{

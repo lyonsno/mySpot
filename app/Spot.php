@@ -6,10 +6,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Spot extends Model
 {
-    // public function tags()
-    // {
-    	// return $this->belongsToMany('App\Tag')->withTimestamps();
-    // }
+    protected $fillable = [
+        'name', 'longitude', 'latitude', 'addres', 'notes',
+    ];
 
     public function compilations()
     {
