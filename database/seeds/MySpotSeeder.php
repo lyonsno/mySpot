@@ -25,7 +25,7 @@ class MySpotSeeder extends Seeder {
 		// App\User::create(['name' => 'stan', 'email' => 'noah@test.com', 'password' => 'gogogo']);
 
 		// create users
-		factory(App\User::class, 3)->create()->each( function ($user) use ($faker)
+		factory(App\User::class, 10)->create()->each( function ($user) use ($faker)
 			{
 				// generate a few spots for each one
 				$user->createdSpots()->saveMany(factory(App\Spot::class, $faker->numberBetween(0, 3))->make());

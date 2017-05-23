@@ -12,8 +12,6 @@ name
 tags
 --------
 id
-spot_id
-user_id
 text
 
 spots
@@ -25,7 +23,7 @@ latitude
 longitude
 notes
 
-list_user
+watchers
 --------
 id
 user_id
@@ -37,3 +35,9 @@ lists_spots
 id
 spot_id
 list_id
+
+creators - user can have created a tag, spot, or list
+--------
+id
+user_id
+createable_id
